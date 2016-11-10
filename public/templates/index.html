@@ -1,0 +1,19 @@
+<div class="table-responsive" ng-controller="homeController" ng-init="init(true)">
+  <span class="show-btn"><button type="button" class="btn btn-primary" ng-click="init(false)">show all</button></span>
+  <br>
+  <span>Total Entries:{{total_entries}}</span>
+  <table class="table table-striped" style="margin:0px !important">
+    <thead>
+      <tr>
+        <th>Instrument ID</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key,entry) in executionOrders">
+        <td><span ng-click="handleClick(key)" class="instrument">{{entry.instrument_id}}</span></td>
+        <td ng-if="show[key] == true">{{entry.position}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.instrument {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0B0080;
+}
+.table-responsive {
+  width: 50%;
+  min-width: 200px;
+  margin: 0 auto;
+}
+.show-btn {
+  float: right;
+}
