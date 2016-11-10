@@ -18,7 +18,7 @@ var getValues = function(data) {
   return values;
 }
 var updatePosition = function (actionId, result,qty,defer) {
-  console.log (actionId,result['position'],qty);
+  //console.log (actionId,result['position'],qty);
   if (actionId == 1) {
     result['position'] += qty * 1;
   } else {
@@ -28,13 +28,13 @@ var updatePosition = function (actionId, result,qty,defer) {
     if (err) {
       defer.reject(err);
     } else {
-      console.log (result['id'], "updated");
+      console.log (result['instrument_id'], "updated");
       defer.resolve("updated");
     }
   });
 }
 var addPosition = function (actionId,qty,id,defer) {
-  console.log (actionId,qty,id);
+  //console.log (actionId,qty,id);
   var position = -1;
   if (actionId == 1) {
     position = qty * 1;
@@ -63,6 +63,7 @@ module.exports = {
       defer.reject("error");
       return;
     }
+    console.log (values);
     var query = Instrument.findOne({
       instrument_id: values['id']*1
     });
